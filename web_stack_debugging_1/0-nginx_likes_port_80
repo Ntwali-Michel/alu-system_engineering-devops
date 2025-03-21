@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# Configure apache to respond to localhost
+# Fix nginx default files. Symbolic link is broken.
 
-echo "ServerName localhost" > /etc/apache2.conf
-service apache2 start
+rm /etc/nginx/sites-enabled/default
+
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+service nginx restart
