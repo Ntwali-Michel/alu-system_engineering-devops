@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# nginx likes port 80
+# Configure apache to respond to localhost
 
-# configuring nginx
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
+echo "ServerName localhost" > /etc/apache2.conf
+service apache2 start
